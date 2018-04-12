@@ -3,6 +3,17 @@
  let cards = [...card]
  console.log(cards);
 
+// declared variables
+const deck = document.getElementsByClassName("deck");
+var openedCards = [];
+let moves = 0;
+let moveCounter = document.querySelector(".moves");
+const stars = document.querySelectorAll(".fa-star");
+let matchedCard = document.getElementsByClassName("match");
+let starsList = document.querySelectorAll(".stars li");
+let closeIcon = document.querySelector(".close");
+let modal = document.getElementById("popup1")
+
 /*
  * Display the cards on the page
  *   - shuffle the list of cards using the provided "shuffle" method below
