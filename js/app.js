@@ -1,7 +1,7 @@
-/*
- * Create a list that holds all of your cards
- */
-
+// card list holding all cards
+ let card = document.getElementsByClassName("card");
+ let cards = [...card]
+ console.log(cards);
 
 /*
  * Display the cards on the page
@@ -23,7 +23,7 @@ function shuffle(array) {
     }
 
     return array;
-}
+};
 
 
 /*
