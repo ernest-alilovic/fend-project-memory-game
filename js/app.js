@@ -8,7 +8,7 @@ const deck = document.getElementById("card-deck");
 let moves = 0;
 let counter = document.querySelector(".moves");
 const stars = document.querySelectorAll(".fa-star");
-let matchedCard = document.getElementsByClassName("match");
+let matchedCards = document.getElementsByClassName("match");
 let starsList = document.querySelectorAll(".stars li");
 let closeIcon = document.querySelector(".close");
 let modal = document.getElementById("popup1");
@@ -44,7 +44,7 @@ function init() {
     moves = 0;
     counter.innerHTML = moves;
     // resets rating
-    for (var i= 0; i < stars.length; i++) {
+    for (var i = 0; i < stars.length; i++) {
         stars[i].style.color = "#FFD700";
         stars[i].style.visibility = "visible";
     }
@@ -111,8 +111,8 @@ function disable() {
 function enable() {
     Array.prototype.filter.call(cards, function(card) {
         card.classList.remove('disabled');
-        for(var i = 0; i < matchedCard.length; i++) {
-            matchedCard[i].classList.add("disabled");
+        for(var i = 0; i < matchedCards.length; i++) {
+            matchedCards[i].classList.add("disabled");
         }
     });
 }
@@ -167,16 +167,16 @@ function startTimer() {
 
 // displays congratulations modal
 function congratulations() {
-    if (matchedCard.length == 16) {
+    if (matchedCards.length == 16) {
         clearInterval(interval);
         finalTime = timer.innerHTML;
         modal.classList.add("show");
         // declares star rating variable
         var starRating = document.querySelector(".stars").innerHTML;
         // displays moves, rating and time on modal
-        document.getElementsByClassName("finalMove").innerHTML = moves;
-        document.getElementsByClassName("starRating").innerHTML = starRating;
-        document.getElementsByClassName("totalTime").innerHTML = finalTime;
+        document.getElementById("finalMove").innerHTML = moves;
+        document.getElementById("starRating").innerHTML = starRating;
+        document.getElementById("totalTime").innerHTML = finalTime;
         // displays close icon on modal
         closeModal();
     };
