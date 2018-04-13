@@ -3,7 +3,7 @@
  let cards = [...card]
  console.log(cards);
 
-// declared variables
+// declares variables
 const deck = document.getElementsByClassName("deck");
 var openedCards = [];
 let moves = 0;
@@ -13,6 +13,11 @@ let matchedCard = document.getElementsByClassName("match");
 let starsList = document.querySelectorAll(".stars li");
 let closeIcon = document.querySelector(".close");
 let modal = document.getElementById("popup1")
+
+// loops through all cards and adds event listeners
+for (var i = 0; i < cards.length; i++){
+   cards[i].addEventListener("click", displayCard);
+};
 
 /*
  * Display the cards on the page
