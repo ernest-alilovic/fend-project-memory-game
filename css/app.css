@@ -17,9 +17,8 @@ body {
 }
 
 body {
-	background: #ffffff;
-	font-family: 'Permanent Marker', cursive;
-	font-size: 16px;
+	background: #ffffff url('../img/geometry2.png');
+  font-family: 'Coda', cursive;
 }
 
 .container {
@@ -29,19 +28,13 @@ body {
 	flex-direction: column;
 }
 
-h1 {
-	font-family: 'Gloria Hallelujah', cursive;
-}
-
-
 /*
- * Styles for the deck of cards
+ * Styles for card deck
  */
-
 
 .deck {
 	width: 85%;
-	background: #716F71;
+	background: linear-gradient(160deg, #cacaca 0%, #aa7ecd 100%);
 	padding: 1rem;
 	border-radius: 4px;
 	box-shadow: 8px 9px 26px 0 rgba(46, 61, 73, 0.5);
@@ -104,11 +97,9 @@ h1 {
 	opacity: 0.9;
 }
 
-
 /*
- * Styles for the Score Panel
+ * Styles for score panel
  */
-
 
 .score-panel {
 	text-align: left;
@@ -146,7 +137,6 @@ h1 {
  * Styles for congratulations modal
  */
 
-
 .overlay {
 	position: fixed;
 	top: 0;
@@ -172,13 +162,11 @@ h1 {
 	width: 85%;
 	position: relative;
 	transition: all 5s ease-in-out;
-	font-family: 'Gloria Hallelujah', cursive;
 }
 
 .popup h2 {
 	margin-top: 0;
 	color: #333;
-	font-family: Tahoma, Arial, sans-serif;
 }
 
 .popup .close {
@@ -204,8 +192,8 @@ h1 {
 }
 
 .show {
-	visibility: visible !important;
-	opacity: 100 !important;
+	visibility: visible;
+	opacity: 100;
 }
 
 #starRating li {
@@ -219,12 +207,14 @@ h1 {
 	display: block;
 	margin: 0 auto;
 	width: 50%;
-	font-family: 'Gloria Hallelujah', cursive;
 	color: #ffffff;
 	border-radius: 5px;
 }
 
-/* animations */
+/*
+Animations
+*/
+
 @keyframes flipInY {
 	from {
 		transform: perspective(400px) rotate3d(0, 1, 0, 90deg);
@@ -296,8 +286,9 @@ h1 {
 }
 
 
-/****** Media queries
-***************************/
+/*
+Media queries
+*/
 
 
 @media only screen and (max-width: 320px) {
@@ -310,10 +301,6 @@ h1 {
 		width: 4.7rem;
 	}
 }
-
-
-/* For Tablets and larger screens
-****************/
 
 @media only screen and (min-width: 768px) {
 	.container {

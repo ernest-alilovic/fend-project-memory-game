@@ -195,7 +195,7 @@ function playAgain() {
     init();
 }
 
-// loops over all cards and adds event listeners to each one
+// loops over all cards and adds event listeners
 for (var i = 0; i < cards.length; i++) {
    card = cards[i];
     card.addEventListener("click", displayCard);
