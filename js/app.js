@@ -14,18 +14,6 @@ let starsList = document.querySelectorAll(".stars li");
 let closeIcon = document.querySelector(".close");
 let modal = document.getElementById("popup1")
 
-// loops over all cards and adds event listeners
-for (var i = 0; i < cards.length; i++){
-   cards[i].addEventListener("click", displayCard);
-};
-
-// displays cards
-var displayCard = function (){
-   this.classList.toggle("open");
-   this.classList.toggle("show");
-   this.classList.toggle("disabled");
-}
-
 // Shuffle function from http://stackoverflow.com/a/2450976
 function shuffle(array) {
     var currentIndex = array.length, temporaryValue, randomIndex;
@@ -42,6 +30,7 @@ function shuffle(array) {
 };
 // shuffles cards at start of game and displays them on the board
 document.body.onload = init();
+
 function init() {
     cards = shuffle(cards);
     for (var i = 0; i < cards.length; i++) {
@@ -68,7 +57,14 @@ function init() {
     clearInterval(interval);
 }
 
-// adds opened cards to OpenedCards list and check if cards are match or not
+// displays cards
+var displayCard = function (){
+   this.classList.toggle("open");
+   this.classList.toggle("show");
+   this.classList.toggle("disabled");
+}
+
+// adds opened cards to OpenedCards list and checks if cards match or not
 function cardOpen() {
     openedCards.push(this);
     var len = openedCards.length;
@@ -194,12 +190,20 @@ function congratulations() {
 function closeModal() {
     closeicon.addEventListener("click", function(e) {
         modal.classList.remove("show");
-        startGame();
+        init();
     });
 }
 
 // enables Play Again button functionality
 function playAgain() {
     modal.classList.remove("show");
-    startGame();
+    init();
 }
+
+// loops over all cards and adds event listeners
+for (var i = 0; i < cards.length; i++) {
+   card = cards[i];
+    card.addEventListener("click", displayCard);
+    card.addEventListener("click", cardOpen);
+    card.addEventListener("click", congratulations);
+};
