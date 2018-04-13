@@ -1,6 +1,6 @@
 # Memory Game
 
-A simple card matching game to test your memory and concentration.
+A simple card matching game to test your memory and concentration. Play now by clicking here: https://ernest-alilovic.github.io/fend-project-memory-game/
 
 ## Challenge
 
