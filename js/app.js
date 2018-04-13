@@ -14,10 +14,17 @@ let starsList = document.querySelectorAll(".stars li");
 let closeIcon = document.querySelector(".close");
 let modal = document.getElementById("popup1")
 
-// loops through all cards and adds event listeners
+// loops over all cards and adds event listeners
 for (var i = 0; i < cards.length; i++){
    cards[i].addEventListener("click", displayCard);
 };
+
+// displays cards
+var displayCard = function (){
+   this.classList.toggle("open");
+   this.classList.toggle("show");
+   this.classList.toggle("disabled");
+}
 
 /*
  * Display the cards on the page
