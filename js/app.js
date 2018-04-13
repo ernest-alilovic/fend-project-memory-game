@@ -177,9 +177,9 @@ function congratulations() {
         var starRating = document.querySelector(".stars").innerHTML;
 
         //showing move, rating, time on modal
-        document.getElementById("finalMove").innerHTML = moves;
-        document.getElementById("starRating").innerHTML = starRating;
-        document.getElementById("totalTime").innerHTML = finalTime;
+        document.getElementsByClassName("finalMove").innerHTML = moves;
+        document.getElementsByClassName("starRating").innerHTML = starRating;
+        document.getElementsByClassName("totalTime").innerHTML = finalTime;
 
         //closeicon on modal
         closeModal();
