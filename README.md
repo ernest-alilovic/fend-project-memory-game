@@ -14,7 +14,9 @@ Remember, the more moves you make the lower your rating goes, meaning less stars
 
 To start matching just start clicking on cards. 
 
-To reset your game board, click the refresh button 
+To reset your game board, click the refresh button.
+
+Best of luck! ☘️
 
 ## Built With
 
