@@ -177,17 +177,7 @@ function congratulations() {
         document.getElementById("finalMove").innerHTML = moves;
         document.getElementById("starRating").innerHTML = starRating;
         document.getElementById("totalTime").innerHTML = finalTime;
-        // displays close icon on modal
-        closeModal();
     };
-}
-
-// enables close icon functionality
-function closeModal() {
-    closeicon.addEventListener("click", function(e) {
-        modal.classList.remove("show");
-        init();
-    });
 }
 
 // enables Play Again button functionality

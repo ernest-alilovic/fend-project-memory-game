@@ -167,6 +167,7 @@ body {
 .popup h2 {
 	margin-top: 0;
 	color: #333;
+	text-align: center;
 }
 
 .popup .close {
@@ -184,8 +185,13 @@ body {
 	color: #E5F720;
 }
 
-.popup .content-1,
-.content-2 {
+.popup .content-1 {
+	max-height: 30%;
+	overflow: auto;
+	text-align: center;
+}
+
+.popup .content-2 {
 	max-height: 30%;
 	overflow: auto;
 	text-align: center;
