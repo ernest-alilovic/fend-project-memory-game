@@ -129,14 +129,14 @@ function moveCounter() {
         startTimer();
     }
     // rates user based on moves
-    if (moves > 8 && moves < 12) {
+    if (moves > 10 && moves < 15) {
         for(i = 0; i < 3; i++) {
             if(i > 1) {
                 stars[i].style.visibility = "collapse";
             }
         }
     }
-    else if (moves > 13) {
+    else if (moves > 16) {
         for(i = 0; i < 3; i++) {
             if(i > 0) {
                 stars[i].style.visibility = "collapse";
