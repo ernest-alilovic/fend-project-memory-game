@@ -167,3 +167,39 @@ function startTimer() {
         }
     },1000);
 }
+
+// displays congratulations modal
+function congratulations() {
+    if (matchedCard.length == 16) {
+        clearInterval(interval);
+        finalTime = timer.innerHTML;
+
+        // show congratulations modal
+        modal.classList.add("show");
+
+        // declare star rating variable
+        var starRating = document.querySelector(".stars").innerHTML;
+
+        //showing move, rating, time on modal
+        document.getElementById("finalMove").innerHTML = moves;
+        document.getElementById("starRating").innerHTML = starRating;
+        document.getElementById("totalTime").innerHTML = finalTime;
+
+        //closeicon on modal
+        closeModal();
+    };
+}
+
+// enables close icon functionality
+function closeModal() {
+    closeicon.addEventListener("click", function(e) {
+        modal.classList.remove("show");
+        startGame();
+    });
+}
+
+// enables Play Again button functionality
+function playAgain() {
+    modal.classList.remove("show");
+    startGame();
+}
