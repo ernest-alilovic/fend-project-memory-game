@@ -4,7 +4,7 @@
  console.log(cards);
 
 // declares variables
-const deck = document.getElementsByClassName("deck");
+const deck = document.getElementById("card-deck");
 let moves = 0;
 let counter = document.querySelector(".moves");
 const stars = document.querySelectorAll(".fa-star");
@@ -58,7 +58,7 @@ function init() {
 }
 
 // displays cards
-var displayCard = function (){
+var displayCard = function () {
    this.classList.toggle("open");
    this.classList.toggle("show");
    this.classList.toggle("disabled");
@@ -149,6 +149,7 @@ function moveCounter() {
 var second = 0, minute = 0; hour = 0;
 var timer = document.querySelector(".timer");
 var interval;
+
 function startTimer() {
     interval = setInterval(function() {
         timer.innerHTML = minute + "mins " + second + "secs";
