@@ -51,8 +51,60 @@ function init() {
         });
     }
 
+// adds opened cards to OpenedCards list and check if cards are match or not
+function cardOpen() {
+    openedCards.push(this);
+    var len = openedCards.length;
+    if(len === 2) {
+        moveCounter();
+        if(openedCards[0].type === openedCards[1].type) {
+            matched();
+        } else {
+            unmatched();
+        }
+    }
+};
+
+// deals with matched cards
+function matched() {
+    openedCards[0].classList.add("match", "disabled");
+    openedCards[1].classList.add("match", "disabled");
+    openedCards[0].classList.remove("show", "open", "no-event");
+    openedCards[1].classList.remove("show", "open", "no-event");
+    openedCards = [];
+}
+
+// deals with unmatched cards
+function unmatched() {
+  openedCards[0].classList.add("unmatched");
+    openedCards[1].classList.add("unmatched");
+    disable();
+    setTimeout(function() {
+        openedCards[0].classList.remove("show", "open", "no-event", "unmatched");
+        openedCards[1].classList.remove("show", "open", "no-event", "unmatched");
+        enable();
+        openedCards = [];
+    },1100);
+}
+
+// temporarily disables cards
+function disable() {
+    Array.prototype.filter.call(cards, function(card){
+        card.classList.add('disabled');
+    });
+}
+
+// enables cards and disables matched cards
+function enable() {
+    Array.prototype.filter.call(cards, function(card) {
+        card.classList.remove('disabled');
+        for(var i = 0; i < matchedCard.length; i++) {
+            matchedCard[i].classList.add("disabled");
+        }
+    });
+}
+
 /*
- * set up the event listener for a card. If a card is clicked:
  *  - display the card's symbol (put this functionality in another function that you call from this one)
  *  - add the card to a *list* of "open" cards (put this functionality in another function that you call from this one)
  *  - if the list already has another card, check to see if the two cards match
