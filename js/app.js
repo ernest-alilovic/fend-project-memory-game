@@ -5,14 +5,14 @@
 
 // declares variables
 const deck = document.getElementsByClassName("deck");
-var openedCards = [];
 let moves = 0;
-let moveCounter = document.querySelector(".moves");
+let counter = document.querySelector(".moves");
 const stars = document.querySelectorAll(".fa-star");
 let matchedCard = document.getElementsByClassName("match");
 let starsList = document.querySelectorAll(".stars li");
 let closeIcon = document.querySelector(".close");
-let modal = document.getElementById("popup1")
+let modal = document.getElementById("popup1");
+var openedCards = [];
 
 // Shuffle function from http://stackoverflow.com/a/2450976
 function shuffle(array) {
@@ -102,7 +102,7 @@ function unmatched() {
 
 // temporarily disables cards
 function disable() {
-    Array.prototype.filter.call(cards, function(card){
+    Array.prototype.filter.call(cards, function(card) {
         card.classList.add('disabled');
     });
 }
@@ -130,14 +130,14 @@ function moveCounter() {
     }
     // rates user based on moves
     if (moves > 8 && moves < 12) {
-        for(i= 0; i < 3; i++) {
+        for(i = 0; i < 3; i++) {
             if(i > 1) {
                 stars[i].style.visibility = "collapse";
             }
         }
     }
     else if (moves > 13) {
-        for(i= 0; i < 3; i++) {
+        for(i = 0; i < 3; i++) {
             if(i > 0) {
                 stars[i].style.visibility = "collapse";
             }
@@ -151,7 +151,7 @@ var timer = document.querySelector(".timer");
 var interval;
 function startTimer() {
     interval = setInterval(function() {
-        timer.innerHTML = minute+"mins "+second+"secs";
+        timer.innerHTML = minute + "mins " + second + "secs";
         second++;
         if(second == 60) {
             minute++;
@@ -169,19 +169,14 @@ function congratulations() {
     if (matchedCard.length == 16) {
         clearInterval(interval);
         finalTime = timer.innerHTML;
-
-        // show congratulations modal
         modal.classList.add("show");
-
-        // declare star rating variable
+        // declares star rating variable
         var starRating = document.querySelector(".stars").innerHTML;
-
-        //showing move, rating, time on modal
+        // displays moves, rating and time on modal
         document.getElementsByClassName("finalMove").innerHTML = moves;
         document.getElementsByClassName("starRating").innerHTML = starRating;
         document.getElementsByClassName("totalTime").innerHTML = finalTime;
-
-        //closeicon on modal
+        // displays close icon on modal
         closeModal();
     };
 }
@@ -200,7 +195,7 @@ function playAgain() {
     init();
 }
 
-// loops over all cards and adds event listeners
+// loops over all cards and adds event listeners to each one
 for (var i = 0; i < cards.length; i++) {
    card = cards[i];
     card.addEventListener("click", displayCard);
