@@ -123,3 +123,12 @@ h1 {
     float: right;
     cursor: pointer;
 }
+
+.fa-star {
+	color: #FFD700;
+}
+
+.timer {
+	display: inline-block;
+	margin: 0 1rem;
+}
