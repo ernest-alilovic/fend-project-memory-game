@@ -1,20 +1,26 @@
-# Memory Game Project
+# Memory Game
 
-## Table of Contents
+A simple card matching game to test your memory and concentration.
 
-* [Instructions](#instructions)
-* [Contributing](#contributing)
+## How To Play
 
-## Instructions
+To start playing just visit this link: https://ernest-alilovic.github.io/fend-project-memory-game/
 
-The starter project has some HTML and CSS styling to display a static version of the Memory Game project. You'll need to convert this project from a static project to an interactive one. This will require modifying the HTML and CSS files, but primarily the JavaScript file.
+## Rules
 
-To get started, open `js/app.js` and start building out the app's functionality
+There are 8 pairs of cards in the deck. 
+Match all the pairs in the quickest time and in as few moves as you can!
+Remember, the more moves you make the lower your rating goes, meaning less stars!
 
-For specific, detailed instructions, look at the project instructions in the [Udacity Classroom](https://classroom.udacity.com/me).
+To start matching just start clicking on cards. 
 
-## Contributing
+To reset your game board, click the refresh button.
 
-This repository is the starter code for _all_ Udacity students. Therefore, we most likely will not accept pull requests.
+Best of luck! ☘️
 
-For details, check out [CONTRIBUTING.md](CONTRIBUTING.md).
+## Built With
+
+* HTML
+* CSS
+* Javascript (DOM manipulation)
+* Icons provided by [font-awesome](https://fontawesome.com/)
